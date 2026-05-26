@@ -38,10 +38,10 @@ public class JwtService {
         final String username = extractUsername(token);
 
         return username.equals(userDetails.getUsername()) &&
-                !isTokenValid(token);
+                !isTokenExpired(token);
     }
 
-    private boolean isTokenValid(String token) {
+    private boolean isTokenExpired(String token) {
         return extractAllClaims(token).getExpiration().before(new Date());
     }
 
