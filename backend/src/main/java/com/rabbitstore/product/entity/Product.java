@@ -36,7 +36,7 @@ public class Product extends BaseEntity {
 
     private String brand;
 
-    private String collecion;
+    private String collection;
 
     private Integer stock;
 

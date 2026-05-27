@@ -80,10 +80,11 @@ public class ProductServiceImpl implements ProductService {
                         product.getImages()
                                 .stream()
                                 .map(image ->
-                                        new ProductImageRequest().builder()
+                                        ProductImageRequest.builder()
                                                 .url(image.getUrl())
                                                 .altText(image.getAltText())
-                                                .build())
+                                                .build()
+                                )
                                 .collect(Collectors.toList())
                 )
 
