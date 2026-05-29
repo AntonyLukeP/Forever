@@ -90,6 +90,40 @@ public class ProductSpecification {
                 );
             }
 
+            if (filter.getSortBy() != null &&  query != null) {
+
+                switch (filter.getSortBy()) {
+
+                    case "priceAsc" ->
+                            query.orderBy(
+                                    criteriaBuilder.asc(
+                                            root.get("price")
+                                    )
+                            );
+
+                    case "priceDesc" ->
+                            query.orderBy(
+                                    criteriaBuilder.desc(
+                                            root.get("price")
+                                    )
+                            );
+
+                    case "nameAsc" ->
+                            query.orderBy(
+                                    criteriaBuilder.asc(
+                                            root.get("name")
+                                    )
+                            );
+
+                    case "nameDesc" ->
+                            query.orderBy(
+                                    criteriaBuilder.desc(
+                                            root.get("name")
+                                    )
+                            );
+                }
+            }
+
             return criteriaBuilder.and(
                     predicates.toArray(new Predicate[0])
             );

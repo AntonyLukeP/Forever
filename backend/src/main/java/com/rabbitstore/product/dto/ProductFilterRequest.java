@@ -29,4 +29,8 @@ public class ProductFilterRequest {
 
     private String sortBy;
 
+    private Integer page=0;
+
+    private Integer limit=10;
+
 }
